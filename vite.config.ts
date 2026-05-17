@@ -9,6 +9,7 @@ export default defineConfig(({ command }) => ({
     ...(command === 'build' ? [viteSingleFile()] : []),
   ],
   server: {
+    port: 8080,
     open: true,
   },
   build: {
