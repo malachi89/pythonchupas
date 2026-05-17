@@ -1,0 +1,73 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'mn-05-02',
+  titulo: 'Booleanos como enteros y conversión a bool',
+  descripcion: 'Aprende cómo los booleanos se relacionan con los números y cómo convertir valores a bool.',
+  duracionMinutos: 10,
+  conceptosClave: ['bool()', 'valores truthy', 'valores falsy', 'bool de 0 y 1', 'bool de strings'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'En Python, los booleanos están relacionados con los números: True es 1 y False es 0. Además, cualquier valor puede evaluarse como verdadero o falso.' },
+    { tipo: 'explicacion', titulo: 'Booleanos como números', texto: 'Al usar `int()` con booleanos, True se convierte en 1 y False en 0. Y al revés, 0 es False y cualquier número distinto de 0 es True.' },
+    { tipo: 'ejemplo', titulo: 'bool y números', descripcion: 'La relación entre booleanos y números:', codigo: 'print(int(True))   # 1\nprint(int(False))  # 0\nprint(bool(0))     # False\nprint(bool(1))     # True\nprint(bool(42))    # True' },
+    { tipo: 'explicacion', titulo: 'Valores truthy y falsy', texto: 'En Python, ciertos valores se consideran "falsy" (falsos) y otros "truthy" (verdaderos). Los valores falsy incluyen: 0, 0.0, "" (string vacío), None, [] (lista vacía). Todo lo demás es truthy.' },
+    { tipo: 'ejemplo', titulo: 'Strings como booleanos', descripcion: 'Convirtiendo strings a bool:', codigo: "print(bool(''))    # False (string vacío)\nprint(bool('hola'))  # True (cualquier texto)\nprint(bool(' '))     # True (espacio cuenta)" },
+    { tipo: 'tabla-visual', titulo: 'Valores truthy y falsy comunes', cabeceras: ['Valor', 'bool()', 'Categoría'], filras: [['0', 'False', 'Falsy'], ['1', 'True', 'Truthy'], ['"" (vacio)', 'False', 'Falsy'], ['"Hola"', 'True', 'Truthy'], ['None', 'False', 'Falsy'], ['[]', 'False', 'Falsy']] },
+    { tipo: 'resumen', puntos: ['True = 1, False = 0 como enteros', 'bool(0) es False, bool(cualquier otro número) es True', '"" vacío es False, cualquier otro string es True', 'Estos conceptos son clave para condicionales'] },
+  ],
+  ejercicios: [
+    {
+      id: 'mn-05-02-01',
+      titulo: 'bool de 0 y 1',
+      descripcion: 'Imprime `bool(0)` y `bool(1)` en dos líneas.',
+      starter: '# Imprime bool de 0 y 1\n',
+      pistas: ["print(bool(0))\nprint(bool(1))"],
+      explicacion: "0 es False y cualquier número distinto de 0 es True.",
+      solucionOficial: 'print(bool(0))\nprint(bool(1))',
+      validate: { type: 'output', expected: 'False\nTrue' },
+    },
+    {
+      id: 'mn-05-02-02',
+      titulo: 'bool de strings',
+      descripcion: "Imprime `bool('')` y `bool('hola')` en dos líneas.",
+      starter: '# Imprime bool de strings\n',
+      pistas: ["print(bool(''))\nprint(bool('hola'))"],
+      explicacion: "Un string vacío es False, cualquier texto es True.",
+      solucionOficial: "print(bool(''))\nprint(bool('hola'))",
+      validate: { type: 'output', expected: 'False\nTrue' },
+    },
+    {
+      id: 'mn-05-02-03',
+      titulo: 'int de booleans',
+      descripcion: 'Imprime `int(True)` y `int(False)` en dos líneas.',
+      starter: '# Convierte True y False a int\n',
+      pistas: ["print(int(True))\nprint(int(False))"],
+      explicacion: "True vale 1 y False vale 0 como enteros.",
+      solucionOficial: 'print(int(True))\nprint(int(False))',
+      validate: { type: 'output', expected: '1\n0' },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'mn-05-02-q1',
+      pregunta: '¿Qué imprime `print(bool(0))`?',
+      opciones: ['True', 'False', '0', 'Error'],
+      correcta: 1,
+      explicacion: 'bool(0) es False porque 0 es un valor falsy.',
+    },
+    {
+      id: 'mn-05-02-q2',
+      pregunta: '¿Qué imprime `print(int(True))`?',
+      opciones: ['True', '0', '1', 'Error'],
+      correcta: 2,
+      explicacion: 'int(True) devuelve 1, porque True es equivalente a 1.',
+    },
+    {
+      id: 'mn-05-02-q3',
+      pregunta: "¿Cuál de estos valores da False con bool()?",
+      opciones: ['42', '"Python"', '""', '"False"'],
+      correcta: 2,
+      explicacion: 'Un string vacío "" es falsy. El resto son truthy.',
+    },
+  ],
+};

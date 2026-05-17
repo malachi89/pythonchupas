@@ -1,0 +1,65 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'no-01-03',
+  titulo: 'Operadores lógicos: and, or, not',
+  descripcion: 'Combina múltiples condiciones usando operadores lógicos para decisiones más complejas.',
+  duracionMinutos: 10,
+  conceptosClave: ['and', 'or', 'not', 'operadores lógicos', 'condiciones compuestas'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'A veces necesitas evaluar varias condiciones a la vez. Los operadores lógicos `and`, `or` y `not` te permiten combinar condiciones para crear lógica más compleja.' },
+    { tipo: 'explicacion', titulo: 'Operador and', texto: '`and` devuelve True solo si ambas condiciones son verdaderas. Si una es falsa, todo es falso.' },
+    { tipo: 'tabla-visual', titulo: 'Tabla de verdad de and', cabeceras: ['Condición A', 'Condición B', 'A and B'], filras: [['True', 'True', 'True'], ['True', 'False', 'False'], ['False', 'True', 'False'], ['False', 'False', 'False']] },
+    { tipo: 'ejemplo', titulo: 'Usando and', descripcion: 'Dos condiciones deben cumplirse:', codigo: 'edad = 25\nif edad >= 18 and edad <= 65:\n    print("Edad laboral")\n# Resultado: Edad laboral' },
+    { tipo: 'explicacion', titulo: 'Operador or', texto: '`or` devuelve True si al menos una de las condiciones es verdadera. Solo es falso si ambas son falsas.' },
+    { tipo: 'ejemplo', titulo: 'Usando or', descripcion: 'Al menos una condición debe cumplirse:', codigo: "dia = 'sábado'\nif dia == 'sábado' or dia == 'domingo':\n    print('Es fin de semana')" },
+    { tipo: 'explicacion', titulo: 'Operador not', texto: '`not` invierte el valor booleano. Si era True, se vuelve False y viceversa.' },
+    { tipo: 'ejemplo', titulo: 'Usando not', descripcion: 'Negando una condición:', codigo: 'activo = False\nif not activo:\n    print("Cuenta inactiva")\n# Resultado: Cuenta inactiva' },
+    { tipo: 'resumen', puntos: ['and: ambas condiciones deben ser True', 'or: al menos una condición debe ser True', 'not: invierte el valor booleano', 'Puedes combinar and, or y not en una expresión'] },
+  ],
+  ejercicios: [
+    {
+      id: 'no-01-03-01',
+      titulo: 'Rango de edad',
+      descripcion: 'Crea `edad = 25`. Imprime "Acceso permitido" si edad >= 18 y edad <= 60.',
+      starter: 'edad = 25\n# Escribe la condición\n',
+      pistas: ["Usa and para combinar dos condiciones."],
+      explicacion: "and requiere que ambas condiciones sean True.",
+      solucionOficial: 'edad = 25\nif edad >= 18 and edad <= 60:\n    print("Acceso permitido")',
+      validate: { type: 'output', expected: 'Acceso permitido' },
+    },
+    {
+      id: 'no-01-03-02',
+      titulo: 'Fin de semana',
+      descripcion: "Crea `dia = 'sábado'`. Imprime 'Fin de semana' si es sábado o domingo.",
+      starter: "dia = 'sábado'\n# Escribe la condición\n",
+      pistas: ["Usa or para verificar ambos días."],
+      explicacion: "or devuelve True si al menos una condición se cumple.",
+      solucionOficial: "dia = 'sábado'\nif dia == 'sábado' or dia == 'domingo':\n    print('Fin de semana')",
+      validate: { type: 'output', expected: 'Fin de semana' },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'no-01-03-q1',
+      pregunta: '¿Qué imprime?\n```\nx = 7\nif x > 5 and x < 10:\n    print("A")\nelse:\n    print("B")\n```',
+      opciones: ['A', 'B', 'Nada', 'Error'],
+      correcta: 0,
+      explicacion: '7 > 5 es True y 7 < 10 es True, así que la condición compuesta es True.',
+    },
+    {
+      id: 'no-01-03-q2',
+      pregunta: '¿Qué imprime `print(not True)`?',
+      opciones: ['True', 'False', 'None', 'Error'],
+      correcta: 1,
+      explicacion: 'not invierte: not True = False.',
+    },
+    {
+      id: 'no-01-03-q3',
+      pregunta: "¿Con qué operador combinas condiciones donde solo una debe cumplirse?",
+      opciones: ['and', 'or', 'not', 'if'],
+      correcta: 1,
+      explicacion: 'or devuelve True si al menos una condición es verdadera.',
+    },
+  ],
+};

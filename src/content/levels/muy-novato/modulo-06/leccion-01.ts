@@ -1,0 +1,66 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'mn-06-01',
+  titulo: 'Personalizando la salida: sep y end',
+  descripcion: 'Aprende a controlar cómo print() separa los valores y cómo termina cada línea.',
+  duracionMinutos: 10,
+  conceptosClave: ['sep', 'end', 'parámetros de print', 'formato de salida'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'Por defecto `print()` separa los valores con un espacio y termina con un salto de línea. Pero puedes cambiar ambos comportamientos usando los parámetros `sep` y `end`.' },
+    { tipo: 'explicacion', titulo: 'El parámetro sep', texto: '`sep` define el separador entre los valores que pasas a `print()`. Por defecto es un espacio `" "`, pero puedes cambiarlo por cualquier string.' },
+    { tipo: 'ejemplo', titulo: 'Cambiando sep', descripcion: 'Diferentes separadores:', codigo: "print('a', 'b', 'c')           # a b c\nprint('a', 'b', 'c', sep='-')  # a-b-c\nprint('a', 'b', 'c', sep=',')  # a,b,c\nprint('a', 'b', 'c', sep='')   # abc" },
+    { tipo: 'explicacion', titulo: 'El parámetro end', texto: '`end` define qué se imprime al final de la línea. Por defecto es `"\\n"` (salto de línea). Puedes cambiarlo para que varios `print()` impriman en la misma línea.' },
+    { tipo: 'ejemplo', titulo: 'Cambiando end', descripcion: 'Controlando el final de línea:', codigo: "print('Hola', end=' ')\nprint('Mundo')        # Hola Mundo\n\nprint('123', end='')\nprint('456')          # 123456" },
+    { tipo: 'error-comun', titulo: 'Confundir sep con end', codigoMal: "print(1, 2, 3, end=',')  # 1 2 3,", problema: 'end controla el final, no el separador entre valores.', codigoBien: "print(1, 2, 3, sep=',')  # 1,2,3", solucion: 'Usa sep= para separar valores y end= para el final de línea.' },
+    { tipo: 'resumen', puntos: ['sep= cambia el separador entre argumentos', 'end= cambia el carácter final de línea', 'Por defecto sep=" " y end="\\n"', 'end="" permite imprimir en la misma línea'] },
+  ],
+  ejercicios: [
+    {
+      id: 'mn-06-01-01',
+      titulo: 'print con sep',
+      descripcion: "Usa `print('a', 'b', 'c', sep='-')` para imprimir separado por guiones.",
+      starter: "# Usa sep='-'\n",
+      pistas: ["print('a', 'b', 'c', sep='-')"],
+      explicacion: "sep= define el separador entre los valores.",
+      solucionOficial: "print('a', 'b', 'c', sep='-')",
+      validate: { type: 'output', expected: 'a-b-c' },
+    },
+    {
+      id: 'mn-06-01-02',
+      titulo: 'print con end',
+      descripcion: "Usa `print('Hola', end='!')` y luego `print(' Mundo')`.",
+      starter: "# Usa end='!'\n",
+      pistas: ["print('Hola', end='!')\nprint(' Mundo')"],
+      explicacion: "end= cambia el carácter final (por defecto es \\n).",
+      solucionOficial: "print('Hola', end='!')\nprint(' Mundo')",
+      validate: { type: 'output', expected: 'Hola! Mundo' },
+    },
+    {
+      id: 'mn-06-01-03',
+      titulo: 'Nombre y edad con sep',
+      descripcion: "Crea `nombre = 'Ana'` y `edad = 25`. Usa `print(nombre, edad, sep=' tiene ')`.",
+      starter: "nombre = 'Ana'\nedad = 25\n# Usa sep=' tiene '\n",
+      pistas: ["print(nombre, edad, sep=' tiene ')"],
+      explicacion: "sep puede ser cualquier cadena.",
+      solucionOficial: "nombre = 'Ana'\nedad = 25\nprint(nombre, edad, sep=' tiene ')",
+      validate: { type: 'output', expected: 'Ana tiene 25' },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'mn-06-01-q1',
+      pregunta: "¿Qué imprime `print(1, 2, 3, sep='+')`?",
+      opciones: ['1+2+3', '1 2 3', '123', '1+2+3+'],
+      correcta: 0,
+      explicacion: "sep='+' separa los valores con +: 1+2+3.",
+    },
+    {
+      id: 'mn-06-01-q2',
+      pregunta: "¿Para qué sirve `end=' '` en print()?",
+      opciones: ['Agrega un espacio entre valores', 'Evita el salto de línea al final', 'Pone un espacio al inicio', 'Convierte el texto en mayúsculas'],
+      correcta: 1,
+      explicacion: "end=' ' reemplaza el salto de línea por un espacio.",
+    },
+  ],
+};

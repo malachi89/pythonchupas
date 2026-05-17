@@ -1,0 +1,67 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'mn-02-03',
+  titulo: 'Tipos de variables y asignaciones múltiples',
+  descripcion: 'Aprende sobre los diferentes tipos que pueden tener las variables y cómo asignar múltiples valores a la vez.',
+  duracionMinutos: 10,
+  conceptosClave: ['tipos dinámicos', 'type()', 'asignación múltiple', 'variables flotantes', 'variables booleanas'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'Python es de tipado dinámico, lo que significa que una variable puede cambiar de tipo. Además, Python ofrece formas muy elegantes de asignar múltiples variables a la vez.' },
+    { tipo: 'explicacion', titulo: 'Tipado dinámico', texto: 'En Python no tienes que decirle a la variable qué tipo va a ser. Python lo descubre solo. Además, puedes cambiar el tipo de una variable reasignándola con un valor de otro tipo.' },
+    { tipo: 'ejemplo', titulo: 'Variables de distintos tipos', descripcion: 'Cada variable puede guardar cualquier tipo:', codigo: "nombre = 'Ana'      # str\nedad = 25           # int\nprecio = 9.99       # float\nactivo = True       # bool\nprint(type(nombre))\nprint(type(edad))\nprint(type(precio))\nprint(type(activo))" },
+    { tipo: 'explicacion', titulo: 'Asignación múltiple', texto: 'Puedes asignar valores a varias variables en una sola línea. Python evaluará cada valor y lo asignará a su variable correspondiente.' },
+    { tipo: 'ejemplo', titulo: 'Múltiples variables', descripcion: 'Dos formas de asignación múltiple:', codigo: "# Forma 1: misma línea\na, b, c = 1, 2, 3\nprint(a, b, c)\n\n# Forma 2: mismo valor\na = b = c = 0\nprint(a, b, c)" },
+    { tipo: 'explicacion', titulo: 'Intercambiar variables', texto: 'En muchos lenguajes necesitas una variable temporal para intercambiar valores. En Python puedes hacerlo en una línea gracias a la asignación múltiple.' },
+    { tipo: 'ejemplo', titulo: 'Intercambio al estilo Python', descripcion: 'Intercambio de valores en una línea:', codigo: 'a = 1\nb = 2\na, b = b, a\nprint(a)  # 2\nprint(b)  # 1' },
+    { tipo: 'resumen', puntos: ['Python es de tipado dinámico', 'type() revela el tipo de una variable', 'Puedes asignar varias variables en una línea', 'Python permite intercambiar variables sin temporal'] },
+  ],
+  ejercicios: [
+    {
+      id: 'mn-02-03-01',
+      titulo: 'Variable booleana',
+      descripcion: 'Crea una variable `activo` con el valor `True` e imprímela.',
+      starter: '# Crea activo y luego imprímelo\n',
+      pistas: ["activo = True\nprint(activo)"],
+      explicacion: "Los booleanos solo pueden ser True o False.",
+      solucionOficial: 'activo = True\nprint(activo)',
+      validate: { type: 'output', expected: 'True' },
+    },
+    {
+      id: 'mn-02-03-02',
+      titulo: 'Variable flotante',
+      descripcion: 'Crea una variable `precio` con el valor `9.99` e imprímela.',
+      starter: '# Crea precio y luego imprímelo\n',
+      pistas: ["precio = 9.99\nprint(precio)"],
+      explicacion: "Los números decimales son de tipo float.",
+      solucionOficial: 'precio = 9.99\nprint(precio)',
+      validate: { type: 'output', expected: '9.99' },
+    },
+    {
+      id: 'mn-02-03-03',
+      titulo: 'Tipo de variable',
+      descripcion: 'Crea `x = 42`. Usa `print(type(x))` para ver el tipo.',
+      starter: 'x = 42\n# Imprime el tipo de x\n',
+      pistas: ["print(type(x))"],
+      explicacion: "type() devuelve el tipo de dato de una variable.",
+      solucionOficial: 'x = 42\nprint(type(x))',
+      validate: { type: 'output', expected: "<class 'int'>" },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'mn-02-03-q1',
+      pregunta: '¿Qué imprime `print(type(3.14))`?',
+      opciones: ["<class 'int'>", "<class 'float'>", "<class 'str'>", 'Error'],
+      correcta: 1,
+      explicacion: '3.14 es de tipo float (número decimal).',
+    },
+    {
+      id: 'mn-02-03-q2',
+      pregunta: 'Después de `a, b = 1, 2` y luego `a, b = b, a`, ¿qué valores tienen a y b?',
+      opciones: ['a=1, b=2', 'a=2, b=1', 'a=1, b=1', 'a=2, b=2'],
+      correcta: 1,
+      explicacion: 'El intercambio en una línea funciona: a toma el valor de b (2) y b toma el de a (1).',
+    },
+  ],
+};

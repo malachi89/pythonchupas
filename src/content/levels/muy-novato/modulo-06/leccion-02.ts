@@ -1,0 +1,68 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'mn-06-02',
+  titulo: 'Caracteres especiales en strings',
+  descripcion: 'Aprende a usar caracteres especiales como \\n, \\t y cómo escapar comillas dentro de strings.',
+  duracionMinutos: 10,
+  conceptosClave: ['caracteres de escape', '\\n', '\\t', 'secuencias de escape'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'Hay caracteres que no puedes escribir directamente en un string, como un salto de línea o una tabulación. Python usa secuencias de escape para representarlos.' },
+    { tipo: 'explicacion', titulo: '¿Qué son las secuencias de escape?', texto: 'Las secuencias de escape empiezan con una barra invertida `\\` seguida de un carácter especial. Por ejemplo, `\\n` representa un salto de línea y `\\t` una tabulación.' },
+    { tipo: 'tabla-visual', titulo: 'Secuencias de escape comunes', cabeceras: ['Secuencia', 'Significado', 'Ejemplo'], filras: [['\\\\n', 'Salto de línea', '"Línea 1\\\\nLínea 2"'], ['\\\\t', 'Tabulación', '"Nombre\\\\tEdad"'], ['\\\\\\', 'Comilla simple', "'No puedo'"], ['\\\\"', 'Comilla doble', '"Ella dijo: \\"Hola\\""'], ['\\\\\\\\', 'Barra invertida', '"ruta\\\\archivo"']] },
+    { tipo: 'ejemplo', titulo: 'Usando \\n', descripcion: 'Saltos de línea en strings:', codigo: "print('Línea 1\\nLínea 2')\n# Resultado:\n# Línea 1\n# Línea 2" },
+    { tipo: 'explicacion', titulo: 'Tabulación con \\t', texto: 'La tabulación `\\t` inserta un espacio grande, útil para alinear texto en columnas.' },
+    { tipo: 'ejemplo', titulo: 'Usando \\t', descripcion: 'Alineando con tabulaciones:', codigo: "print('Nombre\\tEdad\\tCiudad')\nprint('Ana\\t25\\tMadrid')\nprint('Luis\\t30\\tBogotá')" },
+    { tipo: 'explicacion', titulo: 'Escapar comillas', texto: 'Si necesitas usar el mismo tipo de comilla dentro de un string, escápala con \\. O puedes usar el otro tipo de comilla.' },
+    { tipo: 'ejemplo', titulo: 'Comillas dentro de comillas', descripcion: 'Tres formas de manejar comillas:', codigo: "print('No puedo')        # Escapando\nprint(\"Ella dijo: 'Hola'\")  # Alternando\nprint('Él dijo: \"Adiós\"')   # Alternando" },
+    { tipo: 'resumen', puntos: ['\\n inserta un salto de línea', '\\t inserta una tabulación', '\\\' y \\\" escapan comillas', 'Las secuencias de escape se escriben con \\'] },
+  ],
+  ejercicios: [
+    {
+      id: 'mn-06-02-01',
+      titulo: '\\n dentro del string',
+      descripcion: "Usa `print('Línea 1\\nLínea 2')` para imprimir dos líneas.",
+      starter: '# Usa \\n dentro del string\n',
+      pistas: ["print('Línea 1\\nLínea 2')"],
+      explicacion: "\\n dentro de un string produce un salto de línea.",
+      solucionOficial: "print('Línea 1\\nLínea 2')",
+      validate: { type: 'output', expected: 'Línea 1\nLínea 2' },
+    },
+    {
+      id: 'mn-06-02-02',
+      titulo: '\\t tabulación',
+      descripcion: "Usa `print('Nombre\\tEdad')` para imprimir con tabulación.",
+      starter: '# Usa \\t\n',
+      pistas: ["print('Nombre\\tEdad')"],
+      explicacion: "\\t inserta una tabulación (espacio grande).",
+      solucionOficial: "print('Nombre\\tEdad')",
+      validate: { type: 'output', expected: 'Nombre\tEdad' },
+    },
+    {
+      id: 'mn-06-02-03',
+      titulo: 'Línea de asteriscos',
+      descripcion: "Usa `print('*' * 10)` para imprimir 10 asteriscos.",
+      starter: '# Imprime 10 asteriscos\n',
+      pistas: ["print('*' * 10)"],
+      explicacion: "* repite el string N veces.",
+      solucionOficial: "print('*' * 10)",
+      validate: { type: 'output', expected: '**********' },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'mn-06-02-q1',
+      pregunta: "¿Qué imprime `print('A\\nB')`?",
+      opciones: ['AnB', 'A B', 'A (salto) B', 'AB'],
+      correcta: 2,
+      explicacion: "\\n inserta un salto de línea entre A y B.",
+    },
+    {
+      id: 'mn-06-02-q2',
+      pregunta: "¿Para qué sirve \\t?",
+      opciones: ['Terminar la línea', 'Poner texto en negrita', 'Insertar una tabulación', 'Eliminar espacios'],
+      correcta: 2,
+      explicacion: "\\t es la secuencia de escape para tabulación.",
+    },
+  ],
+};

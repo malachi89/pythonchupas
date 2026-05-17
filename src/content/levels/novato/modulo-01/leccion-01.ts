@@ -1,0 +1,65 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'no-01-01',
+  titulo: 'Introducción a los condicionales: if y else',
+  descripcion: 'Aprende a tomar decisiones en tu código con las estructuras if y else.',
+  duracionMinutos: 10,
+  conceptosClave: ['if', 'else', 'condiciones', 'comparación', 'indentación'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'Los condicionales permiten que tu programa tome decisiones. Dependiendo de si una condición es verdadera o falsa, tu programa ejecutará un bloque de código u otro.' },
+    { tipo: 'explicacion', titulo: 'Estructura de if', texto: 'Un `if` evalúa una condición. Si es True, ejecuta el bloque indentado debajo. Si es False, lo salta. La indentación (4 espacios) es obligatoria en Python.' },
+    { tipo: 'ejemplo', titulo: 'If básico', descripcion: 'Decidiendo si algo se cumple:', codigo: 'edad = 18\nif edad >= 18:\n    print("Eres mayor de edad")\n# Resultado: Eres mayor de edad' },
+    { tipo: 'explicacion', titulo: 'Operadores de comparación', texto: 'Para crear condiciones usas operadores de comparación: == (igual), != (distinto), > (mayor), < (menor), >= (mayor o igual), <= (menor o igual).' },
+    { tipo: 'tabla-visual', titulo: 'Operadores de comparación', cabeceras: ['Operador', 'Significado', 'Ejemplo True'], filras: [['==', 'Igual a', '5 == 5'], ['!=', 'Distinto de', '5 != 3'], ['>', 'Mayor que', '7 > 3'], ['<', 'Menor que', '3 < 7'], ['>=', 'Mayor o igual', '5 >= 5'], ['<=', 'Menor o igual', '3 <= 5']] },
+    { tipo: 'explicacion', titulo: 'Agregando else', texto: '`else` se ejecuta cuando la condición del `if` es False. No lleva condición propia, simplemente es el "si no" del if.' },
+    { tipo: 'ejemplo', titulo: 'if y else', descripcion: 'Tomando decisiones:', codigo: "edad = 15\nif edad >= 18:\n    print('Mayor de edad')\nelse:\n    print('Menor de edad')\n# Resultado: Menor de edad" },
+    { tipo: 'error-comun', titulo: 'Dos puntos olvidados', codigoMal: 'if edad >= 18\n    print("Mayor")', problema: 'Faltan los dos puntos (:) después de la condición.', codigoBien: 'if edad >= 18:\n    print("Mayor")', solucion: 'Siempre pon dos puntos después de la condición en if, elif y else.' },
+    { tipo: 'resumen', puntos: ['if ejecuta código si la condición es True', 'else ejecuta código si la condición es False', 'La indentación (4 espacios) es obligatoria', 'Usa == para comparar, = para asignar'] },
+  ],
+  ejercicios: [
+    {
+      id: 'no-01-01-01',
+      titulo: 'Mayor de edad',
+      descripcion: 'Crea una variable `edad = 18`. Si es mayor o igual a 18, imprime "Mayor". Sino, imprime "Menor".',
+      starter: 'edad = 18\n# Escribe tu condicional\n',
+      pistas: ["Usa if edad >= 18: y else:"],
+      explicacion: "El condicional if/else permite ejecutar código según una condición.",
+      solucionOficial: 'edad = 18\nif edad >= 18:\n    print("Mayor")\nelse:\n    print("Menor")',
+      validate: { type: 'output', expected: 'Mayor' },
+    },
+    {
+      id: 'no-01-01-02',
+      titulo: 'Número positivo o negativo',
+      descripcion: 'Crea `numero = -5`. Si es mayor que 0, imprime "Positivo". Sino, imprime "No positivo".',
+      starter: 'numero = -5\n# Escribe tu condicional\n',
+      pistas: ["if numero > 0:"],
+      explicacion: "Los condicionales funcionan con cualquier expresión booleana.",
+      solucionOficial: 'numero = -5\nif numero > 0:\n    print("Positivo")\nelse:\n    print("No positivo")',
+      validate: { type: 'output', expected: 'No positivo' },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'no-01-01-q1',
+      pregunta: '¿Qué imprime este código?\n```\nx = 10\nif x > 5:\n    print("A")\nelse:\n    print("B")\n```',
+      opciones: ['A', 'B', 'Nada', 'Error'],
+      correcta: 0,
+      explicacion: '10 > 5 es True, así que se ejecuta print("A").',
+    },
+    {
+      id: 'no-01-01-q2',
+      pregunta: '¿Qué operador compara si dos valores son iguales?',
+      opciones: ['=', '==', '!=', '==='],
+      correcta: 1,
+      explicacion: '== es el operador de igualdad. = es para asignación.',
+    },
+    {
+      id: 'no-01-01-q3',
+      pregunta: '¿Qué debe ir al final de una línea con if?',
+      opciones: ['Un punto y coma', 'Dos puntos', 'Un paréntesis', 'Nada'],
+      correcta: 1,
+      explicacion: 'La sintaxis de if requiere dos puntos (:) al final de la condición.',
+    },
+  ],
+};

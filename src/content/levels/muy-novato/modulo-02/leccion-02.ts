@@ -1,0 +1,67 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'mn-02-02',
+  titulo: 'Operando con variables',
+  descripcion: 'Aprende a realizar operaciones con variables y a reasignar sus valores.',
+  duracionMinutos: 10,
+  conceptosClave: ['operaciones con variables', 'reasignación', 'incremento', 'intercambio'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'Las variables no solo guardan valores, también puedes hacer operaciones con ellas. Puedes sumarlas, restarlas, o incluso cambiar su valor por completo.' },
+    { tipo: 'explicacion', titulo: 'Operar con variables', texto: 'Puedes usar variables en operaciones matemáticas. Python tomará el valor actual de cada variable y realizará el cálculo.' },
+    { tipo: 'ejemplo', titulo: 'Sumar variables', descripcion: 'Operando con los valores guardados:', codigo: 'a = 10\nb = 5\nprint(a + b)  # 15\nprint(a * b)  # 50' },
+    { tipo: 'explicacion', titulo: 'Reasignar variables', texto: 'Puedes cambiar el valor de una variable en cualquier momento. Cuando asignas un nuevo valor, el anterior se pierde.' },
+    { tipo: 'ejemplo', titulo: 'Reasignación', descripcion: 'Cambiando el valor:', codigo: 'x = 5\nprint(x)  # 5\nx = 10\nprint(x)  # 10' },
+    { tipo: 'explicacion', titulo: 'Incrementar una variable', texto: 'A menudo querrás aumentar el valor de una variable. Puedes hacerlo con `contador = contador + 1` o usando `contador += 1`.' },
+    { tipo: 'ejemplo', titulo: 'Contador', descripcion: 'Incrementando paso a paso:', codigo: 'contador = 0\ncontador = contador + 1\nprint(contador)  # 1\ncontador += 1\nprint(contador)  # 2' },
+    { tipo: 'resumen', puntos: ['Puedes operar matemáticamente con variables', 'Las variables se pueden reasignar con =', 'contador += 1 es atajo para contador = contador + 1', 'Python primero evalúa la derecha y luego asigna a la izquierda'] },
+  ],
+  ejercicios: [
+    {
+      id: 'mn-02-02-01',
+      titulo: 'Sumar variables',
+      descripcion: 'Crea dos variables: `a = 10` y `b = 5`. Luego imprime la suma de ambas.',
+      starter: '# Crea a y b, luego suma\n',
+      pistas: ["a = 10\nb = 5\nprint(a + b)"],
+      explicacion: "Puedes operar con variables directamente.",
+      solucionOficial: 'a = 10\nb = 5\nprint(a + b)',
+      validate: { type: 'output', expected: '15' },
+    },
+    {
+      id: 'mn-02-02-02',
+      titulo: 'Cambiar variable',
+      descripcion: 'Crea `x = 5`, luego cámbiala a `x = 10` e imprime `x`.',
+      starter: 'x = 5\n# Cambia x a 10 y luego imprímela\n',
+      pistas: ["x = 5\nx = 10\nprint(x)"],
+      explicacion: "Puedes reasignar variables en cualquier momento.",
+      solucionOficial: 'x = 5\nx = 10\nprint(x)',
+      validate: { type: 'output', expected: '10' },
+    },
+    {
+      id: 'mn-02-02-03',
+      titulo: 'Contador',
+      descripcion: 'Crea `contador = 0`. Luego incrementa: `contador = contador + 1` e imprime.',
+      starter: 'contador = 0\n# Incrementa contador y luego imprímelo\n',
+      pistas: ["contador = contador + 1\nprint(contador)"],
+      explicacion: "Puedes usar += para incrementar: contador += 1.",
+      solucionOficial: 'contador = 0\ncontador = contador + 1\nprint(contador)',
+      validate: { type: 'output', expected: '1' },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'mn-02-02-q1',
+      pregunta: '¿Qué imprime este código?\n```python\na = 5\na = a + 3\nprint(a)\n```',
+      opciones: ['5', '3', '8', '53'],
+      correcta: 2,
+      explicacion: 'a se reasigna a a + 3, es decir 5 + 3 = 8.',
+    },
+    {
+      id: 'mn-02-02-q2',
+      pregunta: '¿Qué hace `x += 1`?',
+      opciones: ['Asigna 1 a x', 'Suma 1 a x y guarda el resultado en x', 'Compara x con 1', 'Resta 1 a x'],
+      correcta: 1,
+      explicacion: 'x += 1 es equivalente a x = x + 1.',
+    },
+  ],
+};

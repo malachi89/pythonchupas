@@ -1,0 +1,66 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'mn-04-01',
+  titulo: 'Operaciones aritméticas básicas',
+  descripcion: 'Aprende a usar los operadores aritméticos fundamentales en Python.',
+  duracionMinutos: 10,
+  conceptosClave: ['suma', 'resta', 'multiplicación', 'división', 'operadores aritméticos'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'Python puede funcionar como una calculadora. Los operadores aritméticos te permiten hacer todo tipo de operaciones matemáticas, desde las más simples hasta las más complejas.' },
+    { tipo: 'explicacion', titulo: 'Los operadores básicos', texto: 'Python tiene los operadores aritméticos que ya conoces de matemáticas: + (suma), - (resta), * (multiplicación) y / (división). Además, respeta la jerarquía de operaciones (paréntesis, exponentes, multiplicación/división, suma/resta).' },
+    { tipo: 'tabla-visual', titulo: 'Operadores básicos', cabeceras: ['Operador', 'Operación', 'Ejemplo', 'Resultado'], filras: [['+', 'Suma', '3 + 5', '8'], ['-', 'Resta', '10 - 4', '6'], ['*', 'Multiplicación', '6 * 7', '42'], ['/', 'División', '15 / 3', '5.0']] },
+    { tipo: 'ejemplo', titulo: 'Operaciones combinadas', descripcion: 'Usando paréntesis para controlar el orden:', codigo: 'print(2 + 3 * 4)      # 14 (multiplica primero)\nprint((2 + 3) * 4)    # 20 (paréntesis primero)\nprint(10 - 2 * 3)     # 4' },
+    { tipo: 'explicacion', titulo: 'División en Python 3', texto: 'En Python 3, el operador `/` siempre devuelve un número decimal (float). Incluso si divides 8 entre 2, obtienes 4.0, no 4. Si quieres división entera (sin decimales), existe el operador `//`.' },
+    { tipo: 'ejemplo', titulo: 'Comparación de divisiones', descripcion: 'Diferencia entre / y //:', codigo: 'print(10 / 3)   # 3.3333333333333335\nprint(10 // 3)  # 3 (solo parte entera)' },
+    { tipo: 'resumen', puntos: ['+ suma, - resta, * multiplica, / divide', '/ siempre devuelve float', 'Usa paréntesis para agrupar operaciones', 'Python respeta la jerarquía matemática'] },
+  ],
+  ejercicios: [
+    {
+      id: 'mn-04-01-01',
+      titulo: 'Sumar números',
+      descripcion: 'Imprime el resultado de `15 + 8`.',
+      starter: '# Imprime la suma\n',
+      pistas: ["print(15 + 8)"],
+      explicacion: "El operador + suma números.",
+      solucionOficial: 'print(15 + 8)',
+      validate: { type: 'output', expected: '23' },
+    },
+    {
+      id: 'mn-04-01-02',
+      titulo: 'Multiplicar',
+      descripcion: 'Imprime el resultado de `6 * 9`.',
+      starter: '# Imprime la multiplicación\n',
+      pistas: ["print(6 * 9)"],
+      explicacion: "El operador * multiplica.",
+      solucionOficial: 'print(6 * 9)',
+      validate: { type: 'output', expected: '54' },
+    },
+    {
+      id: 'mn-04-01-03',
+      titulo: 'Dividir',
+      descripcion: 'Imprime el resultado de `15 / 3`.',
+      starter: '# Imprime la división\n',
+      pistas: ["print(15 / 3)"],
+      explicacion: "/ siempre devuelve float en Python 3.",
+      solucionOficial: 'print(15 / 3)',
+      validate: { type: 'output', expected: '5.0' },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'mn-04-01-q1',
+      pregunta: '¿Qué imprime `print(2 + 3 * 4)`?',
+      opciones: ['20', '14', '24', 'Error'],
+      correcta: 1,
+      explicacion: 'La multiplicación tiene prioridad: 3*4=12, 2+12=14.',
+    },
+    {
+      id: 'mn-04-01-q2',
+      pregunta: '¿Qué imprime `print(9 / 2)`?',
+      opciones: ['4', '4.0', '4.5', 'Error'],
+      correcta: 2,
+      explicacion: '9 / 2 = 4.5 (la división / siempre da float).',
+    },
+  ],
+};

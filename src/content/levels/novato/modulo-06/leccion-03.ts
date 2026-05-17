@@ -1,0 +1,68 @@
+import type { Leccion } from '../../../../types';
+
+export const leccion: Leccion = {
+  id: 'no-06-03',
+  titulo: 'Validación y división de strings',
+  descripcion: 'Aprende métodos de validación como isdigit, isalpha, isalnum, y métodos de división como split y splitlines.',
+  duracionMinutos: 10,
+  conceptosClave: ['isdigit()', 'isalpha()', 'isalnum()', 'isspace()', 'split()', 'splitlines()', 'strip()'],
+  contenido: [
+    { tipo: 'introduccion', texto: 'Python ofrece métodos para verificar si un string tiene cierto formato: si es numérico, alfabético, alfanumérico, etc. Son esenciales para validar entrada de datos.' },
+    { tipo: 'explicacion', titulo: 'Métodos de validación', texto: 'Estos métodos devuelven True o False. `isdigit()` verifica si todos los caracteres son dígitos. `isalpha()` si son letras. `isalnum()` si son letras o números.' },
+    { tipo: 'tabla-visual', titulo: 'Métodos de validación', cabeceras: ['Método', 'Descripción', '"Python"', '"123"', '"abc123"'], filras: [['isalpha()', 'Solo letras', 'True', 'False', 'False'], ['isdigit()', 'Solo dígitos', 'False', 'True', 'False'], ['isalnum()', 'Letras o dígitos', 'True', 'True', 'True'], ['isspace()', 'Solo espacios', 'False', 'False', 'False']] },
+    { tipo: 'ejemplo', titulo: 'Validación de datos', descripcion: 'Verificando formato:', codigo: "print('123'.isdigit())     # True\nprint('Python'.isalpha())  # True\nprint('abc123'.isalnum())  # True\nprint(' ')                 # (valor)\nprint('   '.isspace())     # True" },
+    { tipo: 'explicacion', titulo: 'Dividir strings con split', texto: '`split()` separa un string usando un separador y devuelve una lista. Sin argumento, divide por espacios en blanco.' },
+    { tipo: 'ejemplo', titulo: 'split en detalle', descripcion: 'Diferentes formas de dividir:', codigo: "datos = 'ana,25,madrid'\nprint(datos.split(','))  # ['ana', '25', 'madrid']\n\nfrase = 'Hola mundo Python'\nprint(frase.split())     # ['Hola', 'mundo', 'Python']" },
+    { tipo: 'explicacion', titulo: 'Limpiar texto con strip', texto: '`strip()` elimina espacios y saltos de línea al principio y final. `lstrip()` y `rstrip()` hacen lo mismo pero solo a un lado.' },
+    { tipo: 'ejemplo', titulo: 'strip', descripcion: 'Limpiando texto:', codigo: "texto = '  hola  '\nprint(texto.strip())   # 'hola'\nprint(texto.lstrip())  # 'hola  '\nprint(texto.rstrip())  # '  hola'" },
+    { tipo: 'resumen', puntos: ['isdigit() = solo números', 'isalpha() = solo letras', 'split() divide en lista', 'strip() elimina espacios'] },
+  ],
+  ejercicios: [
+    {
+      id: 'no-06-03-01',
+      titulo: 'Quitar espacios strip()',
+      descripcion: "Usa `print('  hola  '.strip())` para eliminar los espacios.",
+      starter: '# Elimina los espacios\n',
+      pistas: ["print('  hola  '.strip())"],
+      explicacion: "strip() elimina espacios al inicio y al final.",
+      solucionOficial: "print('  hola  '.strip())",
+      validate: { type: 'output', expected: 'hola' },
+    },
+    {
+      id: 'no-06-03-02',
+      titulo: 'Dividir con split',
+      descripcion: "Usa `print('a,b,c'.split(','))` para dividir por comas.",
+      starter: "# Divide el string\n",
+      pistas: ["print('a,b,c'.split(','))"],
+      explicacion: "split() divide un string en una lista.",
+      solucionOficial: "print('a,b,c'.split(','))",
+      validate: { type: 'output', expected: "['a', 'b', 'c']" },
+    },
+    {
+      id: 'no-06-03-03',
+      titulo: 'Validar número',
+      descripcion: "Usa `print('42'.isdigit())` para verificar si es un número.",
+      starter: '# Verifica si es dígito\n',
+      pistas: ["print('42'.isdigit())"],
+      explicacion: "isdigit() devuelve True si todos los caracteres son dígitos.",
+      solucionOficial: "print('42'.isdigit())",
+      validate: { type: 'output', expected: 'True' },
+    },
+  ],
+  cuestionario: [
+    {
+      id: 'no-06-03-q1',
+      pregunta: "¿Qué imprime `print('abc123'.isalpha())`?",
+      opciones: ['True', 'False', 'Error', 'None'],
+      correcta: 1,
+      explicacion: "isalpha() requiere solo letras. 'abc123' contiene números, así que es False.",
+    },
+    {
+      id: 'no-06-03-q2',
+      pregunta: "¿Qué devuelve `'a,b,c'.split(',')`?",
+      opciones: ["['a,b,c']", "['a', 'b', 'c']", "'abc'", "'a,b,c'"],
+      correcta: 1,
+      explicacion: "split(',') divide por comas y devuelve ['a', 'b', 'c'].",
+    },
+  ],
+};
