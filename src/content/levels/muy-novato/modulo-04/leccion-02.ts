@@ -14,7 +14,7 @@ export const leccion: Leccion = {
     { tipo: 'ejemplo', titulo: 'Módulo', descripcion: 'Trabajando con el resto:', codigo: 'print(17 % 3)  # 2 (17 = 5*3 + 2)\nprint(10 % 2)  # 0 (10 es par)\nprint(7 % 2)   # 1 (7 es impar)' },
     { tipo: 'explicacion', titulo: 'División entera //', texto: 'El operador `//` divide y descarta la parte decimal. Es como hacer una división y quedarte solo con la parte entera.' },
     { tipo: 'ejemplo', titulo: 'División entera', descripcion: 'Comparando / con //:', codigo: 'print(17 / 3)   # 5.666666666666667\nprint(17 // 3)  # 5 (solo la parte entera)\nprint(20 // 6)  # 3' },
-    { tipo: 'tabla-visual', titulo: 'Operadores especiales', cabeceras: ['Operador', 'Nombre', 'Ejemplo', 'Resultado'], filras: [['**', 'Potencia', '3 ** 4', '81'], ['%', 'Módulo', '17 % 3', '2'], ['//', 'División entera', '17 // 3', '5']] },
+    { tipo: 'tabla-visual', titulo: 'Operadores especiales', cabeceras: ['Operador', 'Nombre', 'Ejemplo', 'Resultado'], filas: [['**', 'Potencia', '3 ** 4', '81'], ['%', 'Módulo', '17 % 3', '2'], ['//', 'División entera', '17 // 3', '5']] },
     { tipo: 'resumen', puntos: ['** calcula potencias', '% devuelve el resto de la división', '// divide y descarta decimales', 'Estos operadores son muy usados en programación'] },
   ],
   ejercicios: [

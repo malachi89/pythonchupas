@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Funciones como objetos',
   descripcion: 'Aprende que las funciones son objetos de primera clase: pueden ser asignadas, pasadas como argumento y devueltas.',
   duracionMinutos: 10,
-  conceptosClave: ['funciones como objetos', 'funciones de orden superior', 'callable', '__call__'],
+  conceptosClave: ['funciones como objetos', 'funciones de orden superior'],
   contenido: [
     { tipo: 'introduccion', texto: 'En Python, las funciones son objetos de primera clase. Esto significa que puedes asignarlas a variables, pasarlas como argumentos y retornarlas desde otras funciones.' },
     { tipo: 'explicacion', titulo: 'Función como objeto', texto: 'Puedes asignar una función a una variable sin llamarla (sin paréntesis). La variable se convierte en un alias de la función.' },

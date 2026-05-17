@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Operando con variables',
   descripcion: 'Aprende a realizar operaciones con variables y a reasignar sus valores.',
   duracionMinutos: 10,
-  conceptosClave: ['operaciones con variables', 'reasignación', 'incremento', 'intercambio'],
+  conceptosClave: ['operaciones con variables', 'reasignación', 'incremento'],
   contenido: [
     { tipo: 'introduccion', texto: 'Las variables no solo guardan valores, también puedes hacer operaciones con ellas. Puedes sumarlas, restarlas, o incluso cambiar su valor por completo.' },
     { tipo: 'explicacion', titulo: 'Operar con variables', texto: 'Puedes usar variables en operaciones matemáticas. Python tomará el valor actual de cada variable y realizará el cálculo.' },

@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Decoradores con argumentos y aplicaciones',
   descripcion: 'Aprende a crear decoradores que reciben argumentos y aplicaciones como timing, caché y validación.',
   duracionMinutos: 10,
-  conceptosClave: ['decoradores con parámetros', 'timing', 'caché', 'functools.wraps'],
+  conceptosClave: ['decoradores con parámetros', 'timing', 'functools.wraps'],
   contenido: [
     { tipo: 'introduccion', texto: 'Los decoradores pueden recibir sus propios argumentos. Además, tienen aplicaciones reales como medir tiempo de ejecución, cachear resultados y validar entradas.' },
     { tipo: 'explicacion', titulo: 'Decoradores con argumentos', texto: 'Para que un decorador acepte argumentos, necesitas tres niveles de funciones: la función decoradora (recibe args), que retorna el decorador, que retorna el wrapper.' },

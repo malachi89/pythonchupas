@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Diccionarios anidados y usos avanzados',
   descripcion: 'Aprende a trabajar con diccionarios dentro de diccionarios y usos prácticos avanzados.',
   duracionMinutos: 10,
-  conceptosClave: ['diccionarios anidados', 'comprensión de diccionarios', 'defaultdict', 'aplicaciones'],
+  conceptosClave: ['diccionarios anidados', 'comprensión de diccionarios', 'aplicaciones'],
   contenido: [
     { tipo: 'introduccion', texto: 'Los diccionarios pueden contener otros diccionarios como valores. Esto permite representar datos jerárquicos como bases de datos, configuraciones o JSON.' },
     { tipo: 'explicacion', titulo: 'Diccionarios anidados', texto: 'Un diccionario puede tener como valor otro diccionario. Accedes a los valores internos encadenando corchetes.' },
@@ -19,13 +19,13 @@ export const leccion: Leccion = {
   ejercicios: [
     {
       id: 'in-02-03-01',
-      titulo: 'Diccionario anidado',
-      descripcion: "Crea un diccionario `gato = {'nombre': 'Vitola', 'edad': 7, 'color': 'gris'}` e imprime el nombre.",
-      starter: "# Crea y accede\n",
-      pistas: ["gato = {'nombre': 'Vitola', 'edad': 7, 'color': 'gris'}\nprint(gato['nombre'])"],
-      explicacion: "Accedes al valor con corchetes y la clave.",
-      solucionOficial: "gato = {'nombre': 'Vitola', 'edad': 7, 'color': 'gris'}\nprint(gato['nombre'])",
-      validate: { type: 'output', expected: 'Vitola' },
+      titulo: 'Acceder a diccionario anidado',
+      descripcion: "Crea un diccionario anidado con dos gatos: 'vitola' (edad 7, color gris) y 'rex' (edad 3, color negro). Imprime el color de vitola.",
+      starter: "# Crea el diccionario anidado\n",
+      pistas: ["gatos = {\n    'vitola': {'edad': 7, 'color': 'gris'},\n    'rex': {'edad': 3, 'color': 'negro'}\n}\nprint(gatos['vitola']['color'])"],
+      explicacion: "Un diccionario anidado tiene diccionarios como valores. Accedes con clave[subclave].",
+      solucionOficial: "gatos = {\n    'vitola': {'edad': 7, 'color': 'gris'},\n    'rex': {'edad': 3, 'color': 'negro'}\n}\nprint(gatos['vitola']['color'])",
+      validate: { type: 'output', expected: 'gris' },
     },
     {
       id: 'in-02-03-02',

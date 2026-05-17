@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Aplicaciones de tuplas y sets',
   descripcion: 'Aprende usos prácticos de tuplas y sets en programación real.',
   duracionMinutos: 10,
-  conceptosClave: ['devolver múltiples valores', 'unpacking avanzado', 'membership test', 'eliminar duplicados', 'frozenset'],
+  conceptosClave: ['devolver múltiples valores', 'unpacking', 'membership test', 'eliminar duplicados', 'frozenset'],
   contenido: [
     { tipo: 'introduccion', texto: 'Las tuplas y sets tienen aplicaciones muy prácticas: retornar múltiples valores de funciones, testing de pertenencia rápido, y eliminar duplicados eficientemente.' },
     { tipo: 'explicacion', titulo: 'Tuplas para múltiples retornos', texto: 'Las funciones retornan tuplas implícitamente cuando devuelves varios valores separados por comas.' },

@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Tipos de variables y asignaciones múltiples',
   descripcion: 'Aprende sobre los diferentes tipos que pueden tener las variables y cómo asignar múltiples valores a la vez.',
   duracionMinutos: 10,
-  conceptosClave: ['tipos dinámicos', 'type()', 'asignación múltiple', 'variables flotantes', 'variables booleanas'],
+  conceptosClave: ['tipos dinámicos', 'type()', 'asignación múltiple', 'variables flotantes', 'variables booleanas', 'intercambio de variables'],
   contenido: [
     { tipo: 'introduccion', texto: 'Python es de tipado dinámico, lo que significa que una variable puede cambiar de tipo. Además, Python ofrece formas muy elegantes de asignar múltiples variables a la vez.' },
     { tipo: 'explicacion', titulo: 'Tipado dinámico', texto: 'En Python no tienes que decirle a la variable qué tipo va a ser. Python lo descubre solo. Además, puedes cambiar el tipo de una variable reasignándola con un valor de otro tipo.' },

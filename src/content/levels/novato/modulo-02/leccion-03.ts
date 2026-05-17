@@ -19,13 +19,13 @@ export const leccion: Leccion = {
   ejercicios: [
     {
       id: 'no-02-03-01',
-      titulo: 'Tabla del 3',
-      descripcion: 'Usa un for para imprimir la tabla del 3: 3, 6, 9, 12, 15.',
-      starter: '# Imprime la tabla del 3\n',
-      pistas: ["for i in range(1, 6):\n    print(3 * i)"],
-      explicacion: "Multiplica 3 por cada número del 1 al 5.",
-      solucionOficial: 'for i in range(1, 6):\n    print(3 * i)',
-      validate: { type: 'output', expected: '3\n6\n9\n12\n15' },
+      titulo: 'Bucles anidados',
+      descripcion: 'Usa dos bucles for anidados (i de 1 a 3, j de 1 a 3) para imprimir i * j en cada iteración.',
+      starter: '# Usa for anidados\n',
+      pistas: ["for i in range(1, 4):\n    for j in range(1, 4):\n        print(i * j)"],
+      explicacion: "El bucle interior se ejecuta completo por cada iteración del exterior.",
+      solucionOficial: 'for i in range(1, 4):\n    for j in range(1, 4):\n        print(i * j)',
+      validate: { type: 'output', expected: '1\n2\n3\n2\n4\n6\n3\n6\n9' },
     },
     {
       id: 'no-02-03-02',
@@ -36,6 +36,16 @@ export const leccion: Leccion = {
       explicacion: "break sale del bucle inmediatamente.",
       solucionOficial: 'for i in range(10):\n    if i == 4:\n        break\n    print(i)',
       validate: { type: 'output', expected: '0\n1\n2\n3' },
+    },
+    {
+      id: 'no-02-03-03',
+      titulo: 'Continue: saltar pares',
+      descripcion: 'Usa un for con range(6) y continue para imprimir solo los números impares (1, 3, 5).',
+      starter: '# Usa continue para saltar pares\n',
+      pistas: ["for i in range(6):\n    if i % 2 == 0:\n        continue\n    print(i)"],
+      explicacion: "continue salta a la siguiente iteración cuando i es par.",
+      solucionOficial: 'for i in range(6):\n    if i % 2 == 0:\n        continue\n    print(i)',
+      validate: { type: 'output', expected: '1\n3\n5' },
     },
   ],
   cuestionario: [

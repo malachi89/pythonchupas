@@ -27,6 +27,26 @@ export const leccion: Leccion = {
       solucionOficial: "class NodoArbol:\n    def __init__(self, valor):\n        self.valor = valor\n        self.izquierdo = None\n        self.derecho = None\n\nraiz = NodoArbol(5)\nraiz.izquierdo = NodoArbol(3)\nraiz.derecho = NodoArbol(8)\nprint(raiz.derecho.valor)",
       validate: { type: 'output', expected: '8' },
     },
+    {
+      id: 'av-05-03-02',
+      titulo: 'Recorrido inorden',
+      descripcion: 'Usando la clase NodoArbol, construye el árbol: raíz 10, izquierdo 5, derecho 15. Implementa `inorden(nodo)` que imprima los valores en orden (izquierdo, raíz, derecho).',
+      starter: '# Define e implementa inorden\n',
+      pistas: ["class NodoArbol:\n    def __init__(self, valor):\n        self.valor = valor\n        self.izquierdo = None\n        self.derecho = None\n\ndef inorden(nodo):\n    if nodo:\n        inorden(nodo.izquierdo)\n        print(nodo.valor)\n        inorden(nodo.derecho)\n\nraiz = NodoArbol(10)\nraiz.izquierdo = NodoArbol(5)\nraiz.derecho = NodoArbol(15)\ninorden(raiz)"],
+      explicacion: "Inorden visita: izquierdo, raíz, derecho. Para un árbol binario de búsqueda da los valores ordenados.",
+      solucionOficial: "class NodoArbol:\n    def __init__(self, valor):\n        self.valor = valor\n        self.izquierdo = None\n        self.derecho = None\n\ndef inorden(nodo):\n    if nodo:\n        inorden(nodo.izquierdo)\n        print(nodo.valor)\n        inorden(nodo.derecho)\n\nraiz = NodoArbol(10)\nraiz.izquierdo = NodoArbol(5)\nraiz.derecho = NodoArbol(15)\ninorden(raiz)",
+      validate: { type: 'output', expected: '5\n10\n15' },
+    },
+    {
+      id: 'av-05-03-03',
+      titulo: 'Recorrido preorden',
+      descripcion: 'Usando la clase NodoArbol, construye el árbol: raíz 1, izquierdo 2, derecho 3. Implementa `preorden(nodo)` que imprima raíz, izquierdo, derecho.',
+      starter: '# Define e implementa preorden\n',
+      pistas: ["class NodoArbol:\n    def __init__(self, valor):\n        self.valor = valor\n        self.izquierdo = None\n        self.derecho = None\n\ndef preorden(nodo):\n    if nodo:\n        print(nodo.valor)\n        preorden(nodo.izquierdo)\n        preorden(nodo.derecho)\n\nraiz = NodoArbol(1)\nraiz.izquierdo = NodoArbol(2)\nraiz.derecho = NodoArbol(3)\npreorden(raiz)"],
+      explicacion: "Preorden visita: raíz, izquierdo, derecho. Es útil para copiar un árbol.",
+      solucionOficial: "class NodoArbol:\n    def __init__(self, valor):\n        self.valor = valor\n        self.izquierdo = None\n        self.derecho = None\n\ndef preorden(nodo):\n    if nodo:\n        print(nodo.valor)\n        preorden(nodo.izquierdo)\n        preorden(nodo.derecho)\n\nraiz = NodoArbol(1)\nraiz.izquierdo = NodoArbol(2)\nraiz.derecho = NodoArbol(3)\npreorden(raiz)",
+      validate: { type: 'output', expected: '1\n2\n3' },
+    },
   ],
   cuestionario: [
     {

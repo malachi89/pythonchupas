@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Expresiones avanzadas en F-Strings',
   descripcion: 'Domina los f-strings con expresiones complejas, diccionarios, condicionales y debugging.',
   duracionMinutos: 10,
-  conceptosClave: ['expresiones complejas', 'diccionarios en f-strings', 'condicionales ternarios', 'debugging con =', 'fechas'],
+  conceptosClave: ['expresiones complejas', 'diccionarios en f-strings', 'condicionales ternarios', 'debugging con ='],
   contenido: [
     { tipo: 'introduccion', texto: 'Los f-strings pueden contener expresiones avanzadas como llamadas a funciones, condicionales ternarios, acceso a diccionarios y más.' },
     { tipo: 'explicacion', titulo: 'Diccionarios y listas en f-strings', texto: 'Puedes acceder directamente a elementos de listas y diccionarios dentro de los f-strings.' },

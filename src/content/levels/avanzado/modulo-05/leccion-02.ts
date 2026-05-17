@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Listas enlazadas',
   descripcion: 'Aprende a implementar una lista enlazada simple en Python.',
   duracionMinutos: 10,
-  conceptosClave: ['nodo', 'lista enlazada', 'puntero', 'inserción', 'eliminación'],
+  conceptosClave: ['nodo', 'lista enlazada', 'puntero', 'inserción'],
   contenido: [
     { tipo: 'introduccion', texto: 'Las listas enlazadas son estructuras donde cada elemento (nodo) contiene un valor y un puntero al siguiente nodo. Son la base de muchas estructuras de datos avanzadas.' },
     { tipo: 'explicacion', titulo: 'Estructura de un nodo', texto: 'Un nodo tiene dos partes: el valor que almacena y una referencia al siguiente nodo (o None si es el último). La lista se recorre siguiendo estas referencias.' },
@@ -26,6 +26,16 @@ export const leccion: Leccion = {
       explicacion: "n1.siguiente es n2, y n2.valor es 20.",
       solucionOficial: "class Nodo:\n    def __init__(self, valor):\n        self.valor = valor\n        self.siguiente = None\n\nn1 = Nodo(10)\nn2 = Nodo(20)\nn3 = Nodo(30)\nn1.siguiente = n2\nn2.siguiente = n3\nprint(n1.siguiente.valor)",
       validate: { type: 'output', expected: '20' },
+    },
+    {
+      id: 'av-05-02-02',
+      titulo: 'Recorrer lista enlazada',
+      descripcion: 'Usando la clase Nodo, crea nodos con valores 5, 15, 25. Enlázalos en orden y escribe una función `recorrer(cabeza)` que imprima cada valor en una línea.',
+      starter: '# Crea nodos y función para recorrer\n',
+      pistas: ["class Nodo:\n    def __init__(self, valor):\n        self.valor = valor\n        self.siguiente = None\n\ndef recorrer(cabeza):\n    actual = cabeza\n    while actual:\n        print(actual.valor)\n        actual = actual.siguiente\n\nn1 = Nodo(5)\nn2 = Nodo(15)\nn3 = Nodo(25)\nn1.siguiente = n2\nn2.siguiente = n3\nrecorrer(n1)"],
+      explicacion: "El while recorre la lista siguiendo los punteros 'siguiente' hasta llegar a None.",
+      solucionOficial: "class Nodo:\n    def __init__(self, valor):\n        self.valor = valor\n        self.siguiente = None\n\ndef recorrer(cabeza):\n    actual = cabeza\n    while actual:\n        print(actual.valor)\n        actual = actual.siguiente\n\nn1 = Nodo(5)\nn2 = Nodo(15)\nn3 = Nodo(25)\nn1.siguiente = n2\nn2.siguiente = n3\nrecorrer(n1)",
+      validate: { type: 'output', expected: '5\n15\n25' },
     },
   ],
   cuestionario: [

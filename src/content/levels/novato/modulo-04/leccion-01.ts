@@ -12,7 +12,7 @@ export const leccion: Leccion = {
     { tipo: 'ejemplo', titulo: 'Crear listas', descripcion: 'Diferentes formas de crear listas:', codigo: "nombres = ['Ana', 'Luis', 'Carlos']\nnumeros = [1, 2, 3, 4, 5]\nmixta = ['Hola', 42, 3.14, True]\nvacia = []\nprint(nombres, numeros, mixta, vacia)" },
     { tipo: 'explicacion', titulo: 'Acceder a elementos', texto: 'Los elementos se acceden por su índice, igual que en los strings. El primer elemento es el índice 0. Los índices negativos cuentan desde el final.' },
     { tipo: 'ejemplo', titulo: 'Acceso por índice', descripcion: 'Obteniendo elementos de una lista:', codigo: "colores = ['rojo', 'verde', 'azul']\nprint(colores[0])   # rojo\nprint(colores[2])   # azul\nprint(colores[-1])  # azul\nprint(colores[-2])  # verde" },
-    { type: 'tabla-visual', titulo: 'Índices de lista', cabeceras: ['Elemento', "'rojo'", "'verde'", "'azul'"], filas: [['Índice +', '0', '1', '2'], ['Índice -', '-3', '-2', '-1']] },
+    { tipo: 'tabla-visual', titulo: 'Índices de lista', cabeceras: ['Elemento', "'rojo'", "'verde'", "'azul'"], filas: [['Índice +', '0', '1', '2'], ['Índice -', '-3', '-2', '-1']] },
     { tipo: 'explicacion', titulo: 'Modificar elementos', texto: 'Las listas son mutables: puedes cambiar un elemento asignando un nuevo valor a su índice.' },
     { tipo: 'ejemplo', titulo: 'Modificar lista', descripcion: 'Cambiando valores:', codigo: "colores = ['rojo', 'verde', 'azul']\ncolores[1] = 'amarillo'\nprint(colores)  # ['rojo', 'amarillo', 'azul']" },
     { tipo: 'resumen', puntos: ['Las listas se crean con []', 'Los índices empiezan en 0', 'colores[-1] accede al último elemento', 'Las listas son mutables: puedes cambiarlas'] },

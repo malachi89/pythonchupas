@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'For con listas y strings',
   descripcion: 'Aprende a iterar sobre listas y strings usando bucles for.',
   duracionMinutos: 10,
-  conceptosClave: ['for con listas', 'for con strings', 'iteración de secuencias'],
+  conceptosClave: ['for con listas', 'for con strings', 'iteración de secuencias', 'enumerate()'],
   contenido: [
     { tipo: 'introduccion', texto: 'El bucle `for` no solo sirve con `range()`. Puedes iterar directamente sobre cualquier secuencia: listas, strings, tuplas y más.' },
     { tipo: 'explicacion', titulo: 'For con listas', texto: 'Puedes recorrer cada elemento de una lista directamente, sin necesidad de índices. El for asigna cada elemento a la variable del bucle.' },

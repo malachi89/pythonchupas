@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Raise y excepciones personalizadas',
   descripcion: 'Aprende a lanzar (raise) errores intencionalmente y a crear tus propias excepciones.',
   duracionMinutos: 10,
-  conceptosClave: ['raise', 'excepciones personalizadas', 'assert', 'jerarquía de excepciones'],
+  conceptosClave: ['raise', 'excepciones personalizadas', 'assert'],
   contenido: [
     { tipo: 'introduccion', texto: 'A veces tú mismo quieres lanzar un error porque los datos no son válidos. Puedes usar `raise` para lanzar excepciones existentes o crear las tuyas propias.' },
     { tipo: 'explicacion', titulo: 'Lanzar excepciones con raise', texto: 'Usa `raise` seguido de una excepción para lanzar un error intencionalmente. Puedes pasar un mensaje descriptivo.' },

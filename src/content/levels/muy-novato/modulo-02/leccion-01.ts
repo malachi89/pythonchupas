@@ -12,7 +12,7 @@ export const leccion: Leccion = {
     { tipo: 'analogia', icono: '📦', texto: 'Imagina que las variables son cajas etiquetadas. La etiqueta es el nombre de la variable y lo que guardas dentro es su valor. Puedes cambiar lo que hay dentro cuando quieras.' },
     { tipo: 'ejemplo', titulo: 'Crear una variable', descripcion: 'Asignando valores a variables:', codigo: "nombre = 'Chubeta'\nedad = 7\nprint(nombre)\nprint(edad)" },
     { tipo: 'explicacion', titulo: 'Reglas para nombres de variables', texto: 'Los nombres de variables pueden contener letras, números y guiones bajos, pero no pueden empezar con número. No pueden usar palabras reservadas como `if`, `for`, `while`. Además, Python diferencia mayúsculas y minúsculas.' },
-    { tipo: 'tabla-visual', titulo: 'Nombres válidos e inválidos', cabeceras: ['Válido', 'Inválido', 'Razón'], filras: [['edad', '2edad', 'Empieza con número'], ['mi_nombre', 'mi nombre', 'Tiene espacio'], ['nombre1', 'class', 'Palabra reservada']] },
+    { tipo: 'tabla-visual', titulo: 'Nombres válidos e inválidos', cabeceras: ['Válido', 'Inválido', 'Razón'], filas: [['edad', '2edad', 'Empieza con número'], ['mi_nombre', 'mi nombre', 'Tiene espacio'], ['nombre1', 'class', 'Palabra reservada']] },
     { tipo: 'error-comun', titulo: 'Nombre sin definir', codigoMal: 'print(mensaje)', problema: 'La variable `mensaje` no ha sido creada aún.', codigoBien: "mensaje = 'Hola'\nprint(mensaje)", solucion: 'Siempre debes asignar un valor a una variable antes de usarla.' },
     { tipo: 'resumen', puntos: ['Las variables guardan datos para usarlos después', 'Se crean con nombre = valor', 'Los nombres no pueden empezar con número', 'Python distingue mayúsculas y minúsculas'] },
   ],

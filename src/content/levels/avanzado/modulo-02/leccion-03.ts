@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Algoritmos recursivos',
   descripcion: 'Aprende a usar la recursión: funciones que se llaman a sí mismas para resolver problemas.',
   duracionMinutos: 10,
-  conceptosClave: ['recursión', 'caso base', 'caso recursivo', 'factorial', 'Fibonacci', 'pila de llamadas'],
+  conceptosClave: ['recursión', 'caso base', 'caso recursivo', 'factorial', 'Fibonacci'],
   contenido: [
     { tipo: 'introduccion', texto: 'La recursión ocurre cuando una función se llama a sí misma. Es una técnica elegante para resolver problemas que se pueden dividir en subproblemas similares.' },
     { tipo: 'explicacion', titulo: 'Partes de una función recursiva', texto: 'Toda función recursiva necesita: 1) un caso base que termina la recursión, y 2) un caso recursivo que llama a la función con un problema más pequeño.' },

@@ -80,16 +80,19 @@ builtins.input = _no_input
     const pyodide = pyodideRef.current;
     if (!pyodide) return { output: '', error: 'Pyodide no está listo todavía.' };
 
-    let output = '';
     let errorMsg: string | undefined;
 
-    pyodide.setStdout({ write: (s: string) => { output += s; } });
-    pyodide.setStderr({ write: (s: string) => { output += s; } });
-
     try {
+      const setup = `
+import sys, io as _io
+_sys_stdout = sys.stdout
+_sys_stderr = sys.stderr
+sys.stdout = _io.StringIO()
+sys.stderr = _io.StringIO()
+`;
       if (mockInputs && mockInputs.length > 0) {
         const inputsJson = JSON.stringify(mockInputs);
-        await pyodide.runPythonAsync(`
+        await pyodide.runPythonAsync(setup + `
 import builtins
 _mock_inputs = ${inputsJson}
 _mock_idx = [0]
@@ -102,37 +105,48 @@ def _mock_input(prompt=""):
     return val
 builtins.input = _mock_input
 `);
+      } else {
+        await pyodide.runPythonAsync(setup + `
+import builtins
+def _no_input(prompt=""): return ""
+builtins.input = _no_input
+`);
       }
 
       await pyodide.runPythonAsync(code);
     } catch (err) {
       errorMsg = translateError((err as Error).message || String(err));
-    } finally {
-      // Restore no-op input after mock
-      if (mockInputs && mockInputs.length > 0) {
-        await pyodide.runPythonAsync(`
-import builtins
-def _no_input(prompt=""): return ""
-builtins.input = _no_input
-`).catch(() => {});
-      }
     }
 
-    return { output: output.trimEnd(), error: errorMsg };
+    const getOutput = await pyodide.runPythonAsync(`
+_out = sys.stdout.getvalue()
+_err = sys.stderr.getvalue()
+sys.stdout = _sys_stdout
+sys.stderr = _sys_stderr
+_out + _err
+`);
+    return { output: (getOutput as string || '').trimEnd(), error: errorMsg };
   }, []);
 
   const runWithTest = useCallback(async (userCode: string, testCode: string): Promise<RunResult> => {
     const pyodide = pyodideRef.current;
     if (!pyodide) return { output: '', error: 'Pyodide no está listo.' };
 
-    let output = '';
     let errorMsg: string | undefined;
     let passed = false;
 
-    pyodide.setStdout({ write: (s: string) => { output += s; } });
-    pyodide.setStderr({ write: () => {} });
+    const setup = `
+import sys, io as _io
+_sys_stdout = sys.stdout
+_sys_stderr = sys.stderr
+sys.stdout = _io.StringIO()
+sys.stderr = _io.StringIO()
+import builtins
+def _no_input(prompt=""): return ""
+builtins.input = _no_input
+`;
 
-    const fullCode = userCode + '\n\n' + testCode;
+    const fullCode = setup + '\n' + userCode + '\n\n' + testCode;
 
     try {
       await pyodide.runPythonAsync(fullCode);
@@ -147,7 +161,14 @@ builtins.input = _no_input
       }
     }
 
-    return { output: output.trimEnd(), error: errorMsg, passed };
+    const getOutput = await pyodide.runPythonAsync(`
+_out = sys.stdout.getvalue()
+_err = sys.stderr.getvalue()
+sys.stdout = _sys_stdout
+sys.stderr = _sys_stderr
+_out + _err
+`);
+    return { output: (getOutput as string || '').trimEnd(), error: errorMsg, passed };
   }, []);
 
   return (

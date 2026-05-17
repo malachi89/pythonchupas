@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Métodos y atributos de clase',
   descripcion: 'Aprende a agregar métodos a las clases y a usar atributos de clase y métodos estáticos.',
   duracionMinutos: 10,
-  conceptosClave: ['métodos de instancia', 'atributos de clase', '@staticmethod', '@classmethod', 'encapsulación'],
+  conceptosClave: ['métodos de instancia', 'atributos de clase', '@staticmethod', '@classmethod'],
   contenido: [
     { tipo: 'introduccion', texto: 'Las clases pueden tener métodos (funciones del objeto) que operan sobre sus datos. También hay atributos compartidos por todos los objetos de la clase.' },
     { tipo: 'explicacion', titulo: 'Métodos de instancia', texto: 'Los métodos de instancia reciben `self` como primer argumento y pueden acceder y modificar los atributos del objeto.' },

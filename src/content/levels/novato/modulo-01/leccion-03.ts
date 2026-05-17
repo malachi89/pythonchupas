@@ -9,7 +9,7 @@ export const leccion: Leccion = {
   contenido: [
     { tipo: 'introduccion', texto: 'A veces necesitas evaluar varias condiciones a la vez. Los operadores lógicos `and`, `or` y `not` te permiten combinar condiciones para crear lógica más compleja.' },
     { tipo: 'explicacion', titulo: 'Operador and', texto: '`and` devuelve True solo si ambas condiciones son verdaderas. Si una es falsa, todo es falso.' },
-    { tipo: 'tabla-visual', titulo: 'Tabla de verdad de and', cabeceras: ['Condición A', 'Condición B', 'A and B'], filras: [['True', 'True', 'True'], ['True', 'False', 'False'], ['False', 'True', 'False'], ['False', 'False', 'False']] },
+    { tipo: 'tabla-visual', titulo: 'Tabla de verdad de and', cabeceras: ['Condición A', 'Condición B', 'A and B'], filas: [['True', 'True', 'True'], ['True', 'False', 'False'], ['False', 'True', 'False'], ['False', 'False', 'False']] },
     { tipo: 'ejemplo', titulo: 'Usando and', descripcion: 'Dos condiciones deben cumplirse:', codigo: 'edad = 25\nif edad >= 18 and edad <= 65:\n    print("Edad laboral")\n# Resultado: Edad laboral' },
     { tipo: 'explicacion', titulo: 'Operador or', texto: '`or` devuelve True si al menos una de las condiciones es verdadera. Solo es falso si ambas son falsas.' },
     { tipo: 'ejemplo', titulo: 'Usando or', descripcion: 'Al menos una condición debe cumplirse:', codigo: "dia = 'sábado'\nif dia == 'sábado' or dia == 'domingo':\n    print('Es fin de semana')" },

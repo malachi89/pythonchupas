@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Introducción a los Strings',
   descripcion: 'Aprende a trabajar con cadenas de texto: crearlas, concatenarlas y medir su longitud.',
   duracionMinutos: 10,
-  conceptosClave: ['strings', 'concatenación', 'len()', 'comillas simples y dobles'],
+  conceptosClave: ['strings', 'concatenación', 'len()', 'comillas simples y dobles', 'repetición de strings'],
   contenido: [
     { tipo: 'introduccion', texto: 'Los strings (cadenas de texto) son uno de los tipos de datos más usados en Python. Sirven para representar texto: nombres, mensajes, direcciones, ¡lo que quieras!' },
     { tipo: 'explicacion', titulo: 'Crear strings', texto: 'Puedes crear strings usando comillas simples `\'...\'` o dobles `"..."`. Ambas funcionan igual. La ventaja de tener dos tipos es que puedes incluir un tipo de comilla dentro del otro.' },

@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Proyecto final: combinando todo lo aprendido',
   descripcion: 'Un proyecto completo que integra todos los conceptos del curso.',
   duracionMinutos: 10,
-  conceptosClave: ['proyecto integrador', 'sistema completo', 'clases', 'archivos', 'organización'],
+  conceptosClave: ['proyecto integrador', 'sistema completo', 'clases', 'organización'],
   contenido: [
     { tipo: 'introduccion', texto: 'Este es tu desafío final: crear un sistema de gestión que integre funciones, clases, estructuras de datos y manejo de errores. ¡Todo lo que has aprendido!' },
     { tipo: 'explicacion', titulo: 'Sistema de gestión de tareas', texto: 'Vas a construir un sistema simple de gestión de tareas (todo list). La meta es ver cómo todos los conceptos trabajan juntos.' },

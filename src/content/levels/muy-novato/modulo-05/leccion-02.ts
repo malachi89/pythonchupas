@@ -12,7 +12,7 @@ export const leccion: Leccion = {
     { tipo: 'ejemplo', titulo: 'bool y números', descripcion: 'La relación entre booleanos y números:', codigo: 'print(int(True))   # 1\nprint(int(False))  # 0\nprint(bool(0))     # False\nprint(bool(1))     # True\nprint(bool(42))    # True' },
     { tipo: 'explicacion', titulo: 'Valores truthy y falsy', texto: 'En Python, ciertos valores se consideran "falsy" (falsos) y otros "truthy" (verdaderos). Los valores falsy incluyen: 0, 0.0, "" (string vacío), None, [] (lista vacía). Todo lo demás es truthy.' },
     { tipo: 'ejemplo', titulo: 'Strings como booleanos', descripcion: 'Convirtiendo strings a bool:', codigo: "print(bool(''))    # False (string vacío)\nprint(bool('hola'))  # True (cualquier texto)\nprint(bool(' '))     # True (espacio cuenta)" },
-    { tipo: 'tabla-visual', titulo: 'Valores truthy y falsy comunes', cabeceras: ['Valor', 'bool()', 'Categoría'], filras: [['0', 'False', 'Falsy'], ['1', 'True', 'Truthy'], ['"" (vacio)', 'False', 'Falsy'], ['"Hola"', 'True', 'Truthy'], ['None', 'False', 'Falsy'], ['[]', 'False', 'Falsy']] },
+    { tipo: 'tabla-visual', titulo: 'Valores truthy y falsy comunes', cabeceras: ['Valor', 'bool()', 'Categoría'], filas: [['0', 'False', 'Falsy'], ['1', 'True', 'Truthy'], ['"" (vacio)', 'False', 'Falsy'], ['"Hola"', 'True', 'Truthy'], ['None', 'False', 'Falsy'], ['[]', 'False', 'Falsy']] },
     { tipo: 'resumen', puntos: ['True = 1, False = 0 como enteros', 'bool(0) es False, bool(cualquier otro número) es True', '"" vacío es False, cualquier otro string es True', 'Estos conceptos son clave para condicionales'] },
   ],
   ejercicios: [

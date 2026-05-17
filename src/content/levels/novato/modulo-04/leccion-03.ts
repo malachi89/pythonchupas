@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Slicing y operaciones avanzadas con listas',
   descripcion: 'Domina el slicing de listas y operaciones como copia, búsqueda y concatenación.',
   duracionMinutos: 10,
-  conceptosClave: ['slicing', 'copia de listas', 'in en listas', 'concatenación', 'anidamiento'],
+  conceptosClave: ['slicing', 'copia de listas', 'in en listas', 'concatenación'],
   contenido: [
     { tipo: 'introduccion', texto: 'Al igual que con strings, puedes hacer slicing en listas para obtener sublistas. También puedes concatenar, repetir y buscar elementos.' },
     { tipo: 'explicacion', titulo: 'Slicing de listas', texto: 'La sintaxis `lista[inicio:fin:paso]` funciona igual que en strings. Puedes obtener sublistas, saltar elementos o invertir la lista.' },

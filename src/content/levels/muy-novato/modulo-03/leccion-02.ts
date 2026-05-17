@@ -9,7 +9,7 @@ export const leccion: Leccion = {
   contenido: [
     { tipo: 'introduccion', texto: 'Los strings son secuencias de caracteres, y puedes acceder a cada uno de ellos por su posición. También puedes extraer porciones completas usando slicing. Es como poder cortar tu texto en rodajas.' },
     { tipo: 'explicacion', titulo: 'Indexación — acceder por posición', texto: 'Cada carácter en un string tiene un número de índice. El primer carácter está en la posición 0, el segundo en la 1, y así sucesivamente. También puedes usar índices negativos para contar desde el final.' },
-    { tipo: 'tabla-visual', titulo: 'Índices de "Python"', cabeceras: ['Carácter', 'P', 'y', 't', 'h', 'o', 'n'], filras: [['Índice +', '0', '1', '2', '3', '4', '5'], ['Índice -', '-6', '-5', '-4', '-3', '-2', '-1']] },
+    { tipo: 'tabla-visual', titulo: 'Índices de "Python"', cabeceras: ['Carácter', 'P', 'y', 't', 'h', 'o', 'n'], filas: [['Índice +', '0', '1', '2', '3', '4', '5'], ['Índice -', '-6', '-5', '-4', '-3', '-2', '-1']] },
     { tipo: 'ejemplo', titulo: 'Acceso por índice', descripcion: 'Obteniendo caracteres individuales:', codigo: "texto = 'Python'\nprint(texto[0])  # P\nprint(texto[2])  # t\nprint(texto[-1])  # n" },
     { tipo: 'explicacion', titulo: 'Slicing [inicio:fin]', texto: 'El slicing extrae una porción del string. Usa la sintaxis `texto[inicio:fin]`. El inicio se incluye, el fin se excluye. Si omites inicio, empieza desde 0. Si omites fin, llega hasta el final.' },
     { tipo: 'ejemplo', titulo: 'Slicing en acción', descripcion: 'Extrayendo porciones:', codigo: "texto = 'Python'\nprint(texto[0:3])  # Pyt\nprint(texto[3:])   # hon\nprint(texto[:3])   # Pyt\nprint(texto[::-1]) # nohtyP (invertido)" },

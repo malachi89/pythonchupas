@@ -5,7 +5,7 @@ export const leccion: Leccion = {
   titulo: 'Desafíos de algoritmos y estructuras',
   descripcion: 'Resuelve desafíos más avanzados combinando algoritmos y estructuras de datos.',
   duracionMinutos: 10,
-  conceptosClave: ['anagramas', 'frecuencias', 'ordenamiento avanzado', 'búsqueda', 'eficiencia'],
+  conceptosClave: ['anagramas', 'frecuencias', 'sorted()', 'búsqueda', 'eficiencia'],
   contenido: [
     { tipo: 'introduccion', texto: 'Estos desafíos requieren combinar múltiples conceptos: diccionarios para conteo, algoritmos de búsqueda y manipulación de strings.' },
     { tipo: 'explicacion', titulo: 'Anagramas', texto: 'Dos palabras son anagramas si tienen las mismas letras en diferente orden. Puedes verificarlo ordenando las letras o contando frecuencias.' },
