@@ -54,7 +54,7 @@ export function LessonContent({ secciones, onTerminar }: LessonContentProps) {
       </div>
 
       <div
-        className="flex-1 min-h-0 transition-opacity duration-150"
+        className="min-h-[220px] max-h-[55vh] overflow-y-auto transition-opacity duration-150"
         style={{ opacity: visible ? 1 : 0 }}
       >
         {renderSeccion(secciones[slide])}

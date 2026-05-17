@@ -30,12 +30,12 @@ export const leccion: Leccion = {
     {
       id: 'mn-01-01-02',
       titulo: 'Tu nombre',
-      descripcion: 'Usa `print()` para imprimir tu nombre.',
+      descripcion: 'Usa `print()` para imprimir tu nombre. Puedes escribir cualquier nombre que quieras.',
       starter: '# Escribe tu código aquí\n',
-      pistas: ["`print('Tu nombre aquí')`"],
-      explicacion: "Pon cualquier texto entre comillas dentro de print().",
-      solucionOficial: "print('PythonChupas')",
-      validate: { type: 'contains', strings: ['print'] },
+      pistas: ["Escribe: `print('Ana')` o cualquier nombre entre comillas."],
+      explicacion: "Pon cualquier texto entre comillas dentro de print(). El ejercicio acepta cualquier nombre.",
+      solucionOficial: "print('Ana')  # Puedes usar cualquier nombre",
+      validate: { type: 'regex', pattern: '.+' },
     },
   ],
   cuestionario: [

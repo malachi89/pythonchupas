@@ -23,7 +23,7 @@ export function LessonPage() {
         <ArrowLeft size={14} />
         Volver al curso
       </Link>
-      <LessonView leccion={leccion} nivel={nivel} moduloId={moduloId} />
+      <LessonView key={leccion.id} leccion={leccion} nivel={nivel} moduloId={moduloId} />
     </div>
   );
 }

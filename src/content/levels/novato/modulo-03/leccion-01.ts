@@ -8,6 +8,7 @@ export const leccion: Leccion = {
   conceptosClave: ['while', 'condición', 'bucle infinito', 'actualización de variable'],
   contenido: [
     { tipo: 'introduccion', texto: 'El bucle `while` repite un bloque de código mientras una condición sea verdadera. A diferencia de `for`, no sabes necesariamente cuántas veces se ejecutará.' },
+    { tipo: 'nota', texto: 'Como en `if` y en `for`, la indentación es obligatoria. Todo el código que deba repetirse va con 4 espacios dentro del `while`. Sin indentación, el código no pertenece al bucle.' },
     { tipo: 'explicacion', titulo: 'Estructura de while', texto: '`while condición:` ejecuta el bloque indentado mientras la condición sea True. Es importante que la condición pueda volverse False en algún momento, o tendrás un bucle infinito.' },
     { tipo: 'ejemplo', titulo: 'While básico', descripcion: 'Contando con while:', codigo: 'contador = 0\nwhile contador < 5:\n    print(contador)\n    contador += 1\n# 0, 1, 2, 3, 4' },
     { tipo: 'explicacion', titulo: 'El peligro de los bucles infinitos', texto: 'Si olvidas actualizar la variable de la condición, el bucle nunca terminará. Esto se llama bucle infinito y hará que tu programa se congele.' },

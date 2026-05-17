@@ -115,7 +115,22 @@ builtins.input = _no_input
 
       await pyodide.runPythonAsync(code);
     } catch (err) {
-      errorMsg = translateError((err as Error).message || String(err));
+      const pyErr = err as any;
+      // Pyodide's PythonError stores the traceback in .message; if empty,
+      // reconstruct from .type.__name__ and .args (Python exception proxy)
+      let raw = (typeof pyErr.message === 'string' && pyErr.message.trim())
+        ? pyErr.message
+        : '';
+      if (!raw) {
+        try {
+          const typeName: string = pyErr.type?.__name__ ?? pyErr.type?.toString?.() ?? '';
+          const detail: string = pyErr.args?.toJs?.()?.[0] ?? '';
+          raw = typeName ? `${typeName}: ${detail}` : String(err);
+        } catch {
+          raw = String(err);
+        }
+      }
+      errorMsg = translateError(raw);
     }
 
     const getOutput = await pyodide.runPythonAsync(`
@@ -152,7 +167,19 @@ builtins.input = _no_input
       await pyodide.runPythonAsync(fullCode);
       passed = true;
     } catch (err) {
-      const raw = (err as Error).message || String(err);
+      const pyErr = err as any;
+      let raw = (typeof pyErr.message === 'string' && pyErr.message.trim())
+        ? pyErr.message
+        : '';
+      if (!raw) {
+        try {
+          const typeName: string = pyErr.type?.__name__ ?? pyErr.type?.toString?.() ?? '';
+          const detail: string = pyErr.args?.toJs?.()?.[0] ?? '';
+          raw = typeName ? `${typeName}: ${detail}` : String(err);
+        } catch {
+          raw = String(err);
+        }
+      }
       if (raw.includes('AssertionError')) {
         const match = raw.match(/AssertionError:\s*(.+)/);
         errorMsg = match ? match[1].trim() : 'El código no pasó la validación.';

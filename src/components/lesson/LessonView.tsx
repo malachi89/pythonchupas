@@ -22,6 +22,7 @@ export function LessonView({ leccion, nivel, moduloId }: LessonViewProps) {
   const { completarLeccion, completarEjercicioLeccion, progress } = useProgress();
 
   const [pestana, setPestana] = useState<Pestana>('contenido');
+  const [ejercicioActual, setEjercicioActual] = useState(0);
   const [ejerciciosCompletados, setEjerciciosCompletados] = useState<Set<string>>(new Set());
   const [quizCompletado, setQuizCompletado] = useState(false);
   const [quizPuntuacion, setQuizPuntuacion] = useState(0);
@@ -82,7 +83,10 @@ export function LessonView({ leccion, nivel, moduloId }: LessonViewProps) {
       <div className="flex items-center justify-between">
         <div className="min-w-0 flex-1">
           <h1 className="text-lg font-bold text-gray-900 dark:text-white truncate">{leccion.titulo}</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400">{leccion.descripcion}</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {leccion.descripcion}
+            <span className="ml-2 text-xs text-gray-400 dark:text-gray-500">· {leccion.duracionMinutos} min</span>
+          </p>
         </div>
         {leccionCompletada && (
           <div className="flex items-center gap-1.5 text-green-600 dark:text-green-400 text-sm font-medium flex-shrink-0 ml-3">
@@ -93,7 +97,7 @@ export function LessonView({ leccion, nivel, moduloId }: LessonViewProps) {
       </div>
 
       <div className="flex items-center gap-2">
-        <span className="text-xs text-gray-500 dark:text-gray-400">{leccion.duracionMinutos} min</span>
+        <span className="text-xs text-gray-500 dark:text-gray-400">Progreso</span>
         <div className="flex-1 max-w-xs">
           <ProgressBar value={progresoPct} colorClass="bg-blue-500" />
         </div>
@@ -132,23 +136,76 @@ export function LessonView({ leccion, nivel, moduloId }: LessonViewProps) {
       )}
 
       {pestana === 'ejercicios' && (
-        <div className="space-y-6">
+        <div className="flex flex-col">
           {leccion.ejercicios.length === 0 ? (
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center py-8">Esta leccion no tiene ejercicios.</p>
-          ) : (
-            leccion.ejercicios.map((ej, i) => {
-              const completado = ejerciciosCompletados.has(ej.id) || progresoLeccion?.ejerciciosCompletados.includes(ej.id);
-              return (
-                <div key={ej.id} className="p-4 rounded-xl border border-gray-200 dark:border-gray-700">
+          ) : (() => {
+            const ej = leccion.ejercicios[ejercicioActual];
+            const total = leccion.ejercicios.length;
+            const esUltimo = ejercicioActual === total - 1;
+            const completado = ejerciciosCompletados.has(ej.id) || progresoLeccion?.ejerciciosCompletados.includes(ej.id);
+            return (
+              <>
+                <div className="flex items-center gap-3 pb-4 flex-shrink-0">
+                  <div className="flex-1 flex gap-1">
+                    {leccion.ejercicios.map((e, i) => {
+                      const hecho = ejerciciosCompletados.has(e.id) || progresoLeccion?.ejerciciosCompletados.includes(e.id);
+                      return (
+                        <button
+                          key={e.id}
+                          onClick={() => setEjercicioActual(i)}
+                          className={`h-2 flex-1 rounded-full transition-all duration-300 ${
+                            hecho ? 'bg-green-500' : i === ejercicioActual ? 'bg-blue-400' : 'bg-gray-200 dark:bg-gray-700'
+                          }`}
+                        />
+                      );
+                    })}
+                  </div>
+                  <span className="text-xs tabular-nums text-gray-500 dark:text-gray-400">{ejercicioActual + 1} / {total}</span>
+                </div>
+
+                <div className="p-4 rounded-xl border border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Ejercicio {i + 1}</span>
+                    <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Ejercicio {ejercicioActual + 1}</span>
                     {completado && <CheckCircle size={14} className="text-green-500" />}
                   </div>
-                  <LessonExercise ejercicio={ej} onCompletado={(p, s) => handleEjercicioCompletado(ej.id, p, s)} />
+                  <LessonExercise
+                    key={ej.id}
+                    ejercicio={ej}
+                    onCompletado={(p, s) => handleEjercicioCompletado(ej.id, p, s)}
+                  />
                 </div>
-              );
-            })
-          )}
+
+                <div className="flex items-center justify-between pt-4 mt-4 border-t border-gray-200 dark:border-gray-700 flex-shrink-0">
+                  <button
+                    onClick={() => setEjercicioActual(i => i - 1)}
+                    disabled={ejercicioActual === 0}
+                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 disabled:opacity-30 transition-colors"
+                  >
+                    <ChevronLeft size={14} />
+                    Anterior
+                  </button>
+                  {esUltimo ? (
+                    <button
+                      onClick={() => setPestana('cuestionario')}
+                      className="flex items-center gap-1.5 px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-medium transition-colors"
+                    >
+                      Ir al cuestionario
+                      <ChevronRight size={14} />
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => setEjercicioActual(i => i + 1)}
+                      className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+                    >
+                      Siguiente
+                      <ChevronRight size={14} />
+                    </button>
+                  )}
+                </div>
+              </>
+            );
+          })()}
         </div>
       )}
 

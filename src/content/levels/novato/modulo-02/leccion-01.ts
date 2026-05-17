@@ -8,6 +8,7 @@ export const leccion: Leccion = {
   conceptosClave: ['for', 'range()', 'iteración', 'bucle', 'repetición'],
   contenido: [
     { tipo: 'introduccion', texto: 'Los bucles `for` te permiten repetir código una cantidad determinada de veces. Es como decirle a Python: "haz esto N veces".' },
+    { tipo: 'nota', texto: 'La indentación (4 espacios) que aprendiste con `if` funciona igual aquí. Todo el código que quieras repetir debe ir indentado dentro del `for`. Si no está indentado, no forma parte del bucle.' },
     { tipo: 'explicacion', titulo: '¿Qué es un bucle for?', texto: 'Un bucle `for` itera sobre una secuencia de elementos. Para repetir un número específico de veces, combinamos `for` con `range()`.' },
     { tipo: 'ejemplo', titulo: 'For básico con range', descripcion: 'Repitiendo 5 veces:', codigo: 'for i in range(5):\n    print(i)\n# 0, 1, 2, 3, 4' },
     { tipo: 'explicacion', titulo: 'La función range()', texto: '`range(n)` genera números del 0 al n-1. Puedes personalizarlo: `range(inicio, fin)` o `range(inicio, fin, paso)`.' },
