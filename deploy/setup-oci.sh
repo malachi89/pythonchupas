@@ -10,21 +10,18 @@ set -euo pipefail
 
 APP_DIR=/var/www/pythonchupas
 
-echo "[1/5] Installing nginx..."
+echo "[1/4] Installing nginx..."
 sudo apt update
 sudo apt install -y nginx
 
-echo "[2/5] Allowing port 3000 in UFW..."
-sudo ufw allow 3000/tcp
-
-echo "[3/5] Creating app directory..."
+echo "[2/4] Creating app directory..."
 sudo mkdir -p "$APP_DIR"
 
-echo "[4/5] Copying nginx config..."
+echo "[3/4] Copying nginx config..."
 sudo cp deploy/nginx.conf /etc/nginx/sites-available/pythonchupas
 sudo ln -sf /etc/nginx/sites-available/pythonchupas /etc/nginx/sites-enabled/
 
-echo "[5/5] Enabling and starting nginx..."
+echo "[4/4] Enabling and starting nginx..."
 sudo systemctl enable nginx
 sudo systemctl restart nginx
 
