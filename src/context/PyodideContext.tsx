@@ -20,7 +20,7 @@ const PyodideContext = createContext<PyodideContextType>({
 
 declare global {
   interface Window {
-    loadPyodide: (config: { indexURL: string }) => Promise<unknown>;
+    loadPyodide: (config: { indexURL: string }) => Promise<any>;
   }
 }
 

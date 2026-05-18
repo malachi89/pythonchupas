@@ -48,7 +48,7 @@ export function LessonExercise({ ejercicio, onCompletado }: LessonExerciseProps)
           setResultado({ correcto: false, mensaje: res.error });
         }
       } else {
-        const res = await runCode(codigo, ejercicio.validate.mockInputs);
+        const res = await runCode(codigo, undefined);
         setOutput(res.output);
         setError(res.error);
         if (res.error) {
